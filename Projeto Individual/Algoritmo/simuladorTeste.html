@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+
+<body>
+
+    <h1>Simulador de valorização das obras de arte de Van Gogh ao longo do tempo</h1>
+    Informe o ano em que a obra foi comprada: <input id="input_ano_compra"><br>
+    Por qual valor a obra foi comprada nesta época? <input id="input_valor_compra"><br>
+    Qual seria a taxa de valorização anual média esperada? <input id="input_taxa_esperada"><br>
+    <button onclick="calcular_valor()">
+        Ver Valorização
+    </button>
+    <p id="p_mensagem"></p>
+
+</body>
+
+</html>
+
+<script>
+    function calcular_valor() {
+        var anoCompra = input_ano_compra.value;
+        // pegando o ano em que o usuario adquiriu a obra
+        var preco = Number(input_valor_compra.value);
+        // pegando o valor que ele pagou
+        var taxa = Number(input_taxa_esperada.value);
+        // pegando a expectativa de quanto a obra de arte se valorizaria em média a cada ano
+
+        // primeiro calcular quantos anos se passaram desde a compra 
+        var anosDesdeCompra = anoAtual - anoCompra;
+
+        // calcula a taxa de valorização anual da obra de arte
+        // var valorizacaoAnualMedia = (taxa); // taxa de valorização anual média esperada
+        // var valorizacaoAnualTotal 
+
+        // agora multiplicar o valor original da obra pela valorização anual total para obter o valor atualizado
+        var preco = (preco); // valor de compra em reais
+        var valorAtualizado = (preco * valorizacaoAnualTotal);
+
+        // exibir o valor atualizado da obra considerando a taxa de valorização anual média esperada pelo usuário.
+
+    }
+</script>
