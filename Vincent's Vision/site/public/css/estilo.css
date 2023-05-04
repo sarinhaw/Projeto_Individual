@@ -1,0 +1,338 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url(img/Nome\ \(2\).png);
+  background-repeat:no-repeat;
+}
+
+:root {
+  --tamanho-header: 80px;
+  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-footer: 65px;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+/* começo da estilização da header */
+
+/* .header {
+  height: var(--tamanho-header);
+  border-bottom: 2px solid #32b9cd;
+} */
+
+/* .header .container {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+} */
+
+/* .header a {
+  text-decoration: none;
+  color: #e3b062;
+} */
+/* 
+.agora {
+  font-weight: 800;
+}
+
+.navbar {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: #e3b062;
+}
+
+.titulo {
+  color: #32b9cd;
+  width: fit-content;
+  font-weight: 500;
+}
+
+.header h1 {
+  margin: 0;
+} */
+
+/* fim da estilização navebar */
+
+/* começo do banner */
+
+.banner {
+  height: var(--tamanho-banner);
+  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-size: cover;
+}
+
+.banner .container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.banner .container p {
+  font-size: 36px;
+  color: white;
+  width: 280px;
+}
+
+.banner .container span {
+  font-weight: 800;
+}
+
+.social {
+  background-color: #e5e5e5;
+  display: flex;
+}
+
+.social .container {
+  justify-content: center;
+}
+
+.box img {
+  width: 170px;
+}
+
+.social .container .boxes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.box {
+  width: 280px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box p {
+  text-align: center;
+}
+
+.login {
+  height: var(--tamanho-login);
+  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-size: cover;
+}
+
+.login .container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* inicio estilização de cards login e cadastro */
+
+.card {
+  width: 30%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: row;
+  color: rgb(0, 0, 0);
+  row-gap: 20px;
+}
+
+.img_cadastro{
+  display: flex;
+  height: 85.1vh;
+  background-image: url('img/eyes.jpg');
+  background-size: cover;
+  width: 49.1%;
+}
+
+.img_login{
+  display: flex;
+  height: 85.1vh;
+  background-image: url('img/eyes.jpg');
+  background-size: cover;
+  width: 49%;
+}
+
+.card-cadastro {
+  display: flex;
+  margin-top: 20%;
+  margin-bottom: 7%;
+  justify-content: center;
+  height: 110%;
+  width: 1000px;
+
+}
+
+.card-login {
+  display: flex;
+  margin-top: 20%;
+  margin-bottom: 7%;
+  justify-content: center;
+  height: 110%;
+  width: 1000px;
+}
+
+.h2_cadastro{
+  font-size: 28px;
+  margin-left: 10%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.h2_login {
+  font-size: 28px;
+  margin-left: 5%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.formulario_cadastro {
+  display: flex;
+  height: 50%;
+  width: 40%;
+  margin-left: 5%;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 3%;
+  margin-top: 10%;
+}
+
+.formulario_login {
+  display: flex;
+  height: 50%;
+  width: 40%;
+  margin-left: 5%;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 3%;
+  margin-top: 10%;
+}
+
+.formulario span {
+  font-size: 10px;
+  font-weight: 800px;
+}
+
+.formulario_cadastro input {
+  height: 20px;
+  width: 70%;
+  padding: 5px;
+  border: 0;
+  border-bottom: 1px solid rgb(33, 32, 32);
+  outline: 0;
+  text-align: start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.formulario_login input {
+  height: 20px;
+  width: 80%;
+  padding: 5px;
+  border: 0;
+  border-bottom: 2px solid rgb(33, 32, 32);
+  outline: 0;
+  text-align: start;
+  margin-top: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.botao{
+  cursor: pointer;
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #000000;
+  background-color: #d7cb75;
+  width: 30%;
+  height: 100vh;
+  align-self: center;
+  margin-right: 30%;
+  margin-top: 5%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* fim da estilização dos cards de login e cadastro */
+
+/* inicio estilização cards de erro */
+
+.loading-div {
+  width: 50px;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+#div_erros_login {
+  display: none
+}
+
+.alerta_erro{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_erro {
+  display: none;
+  background-color: #fff;
+  color: black;
+  width: 230px;
+  position: fixed;
+  border-radius: 4px;
+  border: #e6005a 3px solid;
+  padding: 10px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+/* .footer {
+  height: var(--tamanho-footer);
+  width: 100%;
+  background-color: #32b9cd;
+  color: #fff; */
+/* }
+
+.footer h4 {
+  margin: 0;
+}
+
+.footer .container {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.footer .container .version {
+  font-size: 12px;
+  font-weight: 800;
+} */
+
+.simulador {
+  color: white;
+}
+
+.simulador .container {
+  flex-direction: column;
+  overflow: scroll; 
+  height: var(--tamanho-simulador);
+}
