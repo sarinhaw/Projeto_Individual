@@ -1,8 +1,16 @@
-body {
+.body_cadastro {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url(img/Nome\ \(2\).png);
+  background-image: url(img/Nome\ \(3\).png);
+  background-repeat:no-repeat;
+}
+
+.body_login {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url(img/Nome\ \(3\).png);
   background-repeat:no-repeat;
 }
 
@@ -220,7 +228,7 @@ body {
 }
 
 .formulario_cadastro input {
-  height: 20px;
+  height: 15px;
   width: 70%;
   padding: 5px;
   border: 0;

@@ -6,13 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cadastro</title>
-
+    <title>S.O | Login</title>
 
     <script src="./js/funcoes.js"></script>
 
-
-    <link rel="icon" href="../public/assets/icon/favgogh.png">
+    <link rel="icon" href="assets/icon/favicon.png">
     <link rel="stylesheet" href="./css/estilo.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -20,8 +18,10 @@
         rel="stylesheet">
 </head>
 
-<body>
-    <!--header inicio-->
+<body class="body_login">
+
+    <!--Header-->
+
     <!-- <div class="header">
         <div class="container">
             <h1 class="titulo">AquaTech</h1>
@@ -33,60 +33,42 @@
                     <a href="simulador.html">Simulador</a>
                 </li>
                 <li>|</li>
-                <li>
-                    <a href="login.html">Login</a>
-                </li>
                 <li class="agora">
-                    <a href="#">Cadastro</a>
+                    <a href="#">Login</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">Cadastro</a>
                 </li>
             </ul>
         </div>
-    </div> -->
-    <!--header fim-->
+    </div>
+ -->
 
-<!-- card de erro -->
     <div class="login">
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
                 <span id="mensagem_erro"></span>
             </div>
         </div>
-<!-- fim dos cards de erro -->
 
-<!-- começo card cadastro -->
         <div class="container">
-            <div class="card card-cadastro">
-                <div class="formulario_cadastro">
-                    <h2 class="h2_cadastro">Cadastre - se</h2>
-                   
+            <div class="card card-login">
+                <div class="formulario_login">
+                    <h2 class="h2_login">Bem vindo de volta!</h2>
 
-                    <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-
-                    <div class="campo">
-                        <span>Nome:</span>
-                        <input id="nome_input" type="text">
-                    </div>
                     <div class="campo">
                         <span>E-mail:</span>
                         <input id="email_input" type="text">
                     </div>
                     <div class="campo">
                         <span>Senha:</span>
-                        <input id="senha_input" type="password">
+                        <input id="senha_input" type="text">
                     </div>
-                    <div class="campo">
-                        <span>Confirmação da Senha:</span>
-                        <input id="confirmacao_senha_input" type="password">
+                    <button class="botao" onclick="entrar()">Entrar</button>
+                </div>
+                    <div class="img_login">
                     </div>
-                    <button class="botao" onclick="cadastrar()">Login</button>
 
-                </div>
-                <div class="img_cadastro">
-                    
-                </div>
                 <div id="div_aguardar" class="loading-div">
                     <img src="./assets/circle-loading.gif" id="loading-gif">
                 </div>
@@ -105,26 +87,22 @@
     </div> -->
     <!--footer fim-->
 
-
 </body>
 
 </html>
 
 <script>
-    function cadastrar() {
+
+
+    function entrar() {
         aguardar();
 
-        //Recupere o valor da nova input pelo nome do id
-        // Agora vá para o método fetch logo abaixo
-        var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-
             finalizarAguardar();
             return false;
         }
@@ -132,41 +110,51 @@
             setInterval(sumirMensagem, 5000)
         }
 
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
+            console.log("ESTOU NO THEN DO entrar()!")
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
+                console.log(resposta);
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
 
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
 
-                limparFormulario();
-                finalizarAguardar();
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
             } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
             }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
 
         return false;
     }
