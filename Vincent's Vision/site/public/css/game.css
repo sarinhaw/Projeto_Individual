@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  img {
+    width: 50px;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  nav {
+    background-color: #d7cd75;
+    width: 25%;
+    height: 70%;
+    position: absolute;
+    left: -350px;
+    border-radius: 2%;
+  }
+  
+  input[type="checkbox"]:checked~nav {
+    /* quando esse botao for clicado ele ira fazer um evento no conteudo da nav, reaparecer */
+    transform: translateX(350px);
+    /* para mexer no eixo x horizontal */
+  }
+  
+  ul {
+    top: 70px;
+    position: absolute;
+    width: 50%;
+  }
+  
+  a {
+    display: block;
+    padding: 20px 5px;
+  }
+  
+  a:hover {
+    background-color: #ffffff;
+    color: black;
+  }
+  
+  label {
+    padding: 15px;
+    position: absolute;
+    /* dessa forma a fotinha do menu subiu */
+    z-index: 1;
+    /* dessa forma a fotinha fica por cima e eu consigo clicar para sumir */
+  }
+
+  .banner_game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    background-size: cover;
+    width: 100%;
+    /* background-image: url("../css/img/banner57.png");
+      background-repeat: no-repeat; */
+    background-color: #5A8DA6;
+  }
+  
+  .banner_game h1 {
+    font-size: 50px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    mix-blend-mode: soft-light;
+  }
+
+.game-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: 80%;
+    height: 80vh;
+    flex-direction: column;
+}
+
+.banner_game .game-card input{
+    margin-top: 10px;
+    /* padding: 12px 15px; */
+    /* margin: 10px 0; */
+    width: 30%;
+    outline: none;
+    height: 20px;
+    border: 0;
+    border-bottom: 1px solid rgb(33, 32, 32);
+    /* text-align: start; */
+    margin-top: 20px;
+    text-align: 20px;
+    font-size: 20px;
+}
+
+.banner_game .game-card button{
+    width: 10%;
+    height: 5vh;
+    margin-bottom: 5px;
+    border: none;
+    background: #d7cb75;
+    border-radius: 20px;
+    color: #000;
+    font-weight: bolder;
+    font-size: 15px;
+    transition: .4s;
+    
+}
+
+.banner_game .game-card button:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    
+}
+
+.banner_game .game-card p{
+    font-size: 30px;
+}
+

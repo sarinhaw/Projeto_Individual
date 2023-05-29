@@ -160,6 +160,8 @@ input {
     }
 }
 
+    /* o que acontece durante a transição */
+
 .overlay-container {
     position: absolute;
     top: 0;

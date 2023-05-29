@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bio</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <link rel="icon" href="../css/img/gogh.png">
+    <link rel="stylesheet" href="../css/game.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body>
+    <input type="checkbox" id="chec">
+    <label for="chec">
+        <img src="../css/img/gogh.png" alt="">
+    </label>
+    <nav>
+        <ul>
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="#">Galeria Virtual</a></li>
+            <li><a href="#">Quizz</a></li>
+            <li><a href="#">Entre em Contado</a></li>
+        </ul>
+    </nav>
+
+    <div class="banner_game">
+        <!-- <h1>LET´S GO?</h1> -->
+        <div class="game-card">
+            <!-- <h2>Jogo de Digitar Rápido</h2> -->
+            <p>Digite as palavras abaixo o mais rápido possível:</p>
+            <p id="word"></p>
+            <input type="text" id="input" autocomplete="off">
+            <p id="result"></p>
+            <button class="game_button" onclick="startGame()">Iniciar</button>
+        </div>
+
+    </div>
+
+
+    <!-- <div class="social">
+        <div class="card_bio">
+            <div class="foto">
+                <div class="texto">
+                    <h1>texto</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="cotacao">
+        <div class="mensagem">
+            <img src="../css/img/Nome (4).png" alt="">
+        </div>
+    </div> -->
+
+    <div class="historia">
+    </div>
+
+</html>
+<script>
+
+    var words = ["A Noite Estrelada", "Terraço no Café A Noite", "Os comedores de batata", "Autoretrato com chapéu de palha", "Campo de Trigo com Corvos"];
+    var currentIndex = 0;
+    // é uma variável que rastreia a posição atual da palavra que estamos mostrando.
+    var startTime, endTime;
+    // são variáveis para armazenar o tempo de início e fim do jogo.
+    var entrada, resultado;
+    // são variáveis para armazenar referências a elementos HTML em que mostraremos a entrada do usuário e o resultado do jogo.
+
+
+    function startGame() {
+        currentIndex = 0;
+        //   Aqui, estamos definindo a variável currentIndex como zero. Essa variável será usada para acompanhar o índice da palavra atual que está sendo exibida.
+        entrada = document.getElementById("input");
+        //   Estamos selecionando o elemento HTML com o ID "input" e armazenando-o na variável entrada. Esse elemento representa o campo de entrada de texto onde o jogador digitará as palavras.
+        resultado = document.getElementById("result");
+        //   Estamos selecionando o elemento HTML com o ID "result" e armazenando-o na variável resultado. Esse elemento será usado para exibir o resultado do jogo.
+        startTime = new Date();
+        //   new Date();: Estamos armazenando a hora atual em que o jogo começou na variável startTime. Isso será usado para calcular o tempo total do jogo posteriormente.
+        entrada.value = "";
+        //   Estamos definindo o valor do campo de entrada (entrada) como uma string vazia, para garantir que ele esteja limpo antes de começar o jogo.
+        entrada.disabled = false;
+        //   Estamos habilitando o campo de entrada, permitindo que o jogador digite as palavras.
+        entrada.focus();
+        //   Estamos dando o foco ao campo de entrada, para que o jogador possa começar a digitar imediatamente.
+        resultado.textContent = "";
+        //   Estamos definindo o conteúdo do elemento resultado como uma string vazia, para garantir que esteja vazio antes de começar o jogo.
+        showWords();
+        //   Estamos chamando a função showWords() para iniciar a exibição das palavras.
+    }
+
+    function showWords() {
+        var wordElement = document.getElementById("word");
+        var currentIndex = 0;
+
+        for (var i = 0; i < words.length; i++) {
+            setTimeout(updateWord, i * 2000);
+        }
+
+        function updateWord() {
+            wordElement.textContent = words[currentIndex];
+            currentIndex++;
+        }
+    }
+
+
+
+
+        setTimeout(function () {
+            inputField.disabled = true;
+            endTime = new Date();
+            var totalTime = (endTime - startTime) / 1000;
+            var wordsPerMinute = (words.length / totalTime) * 60;
+            var accuracy = calculateAccuracy();
+            var result = "Parabéns! Você digitou " + wordsPerMinute.toFixed(2) + " palavras por minuto com " + accuracy + "% de precisão.";
+            resultado.textContent = result;
+        }, words.length * 5000);
+
+</script>
