@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+
+<body>
+    <div id="resultado"></div>
+
+    <script>
+        var listaPerguntas = [
+            'Van Gogh cortou sua própria orelha como um ato de loucura',
+            'Van Gogh vendeu apenas um quadro em vida',
+            'Van Gogh era considerado um bom pintor por seus contemporâneos',
+            'O famoso quadro "A noite estrelada" foi pintado durante o melhor período da vida de Van Gogh',
+            'Van Gogh não possuía um bom relacionamento com seu irmão devido a questões financeiras',
+            'Van Gogh era influenciado pela arte japonesa',
+            'Van Gogh nasceu e cresceu na França e produziu muitos trabalhos em Arles',
+            'Van Gogh sempre esteve rodeado de amigos artistas que o ajudavam com suas obras',
+            'Van Gogh cometeu suicídio',
+            'Van Gogh enviou sua orelha cortada para uma mulher que ele amava.',
+            'Antes de se tornar um artista, Van Gogh trabalhou em várias profissões diferentes.',
+            'Van Gogh costumava pintar muitas pessoas da nobreza francesa.',
+            'Van Gogh tentou pintar apenas por alguns anos de sua vida depois desistiu por não obter sucesso.'
+        ];
+
+        var listaRespostas = ['V', 'V', 'M', 'M', 'M', 'V', 'M', 'M', 'V', 'V', 'V', 'M', 'M'];
+
+        var contador = 0;
+        var score = 0;
+        var erro = 0;
+        // var resultado = document.getElementById("resultado");
+        resultado.innerHTML = resultado;
+
+        resultado.innerHTML = listaPerguntas[contador] + '<br><br>';
+        resultado.innerHTML += 'Mito: <input type="radio" name="resposta" value="M"> Verdade: <input type="radio" name="resposta" value="V"><br><br>';
+        resultado.innerHTML += '<button onclick="verificar()">Verificar</button>';
+
+        function verificar() {
+            var respostas = document.getElementsByName("resposta");
+            // var respostaSelecionada = null;
+
+            for (var i = 0; i < respostas.length; i++) {
+                if (respostas[i].checked) {
+                    respostaSelecionada = respostas[i].value;
+                }
+            }
+
+            if (respostaSelecionada === listaRespostas[contador]) {
+                score++;
+            } else {
+                erro++;
+            }
+
+            contador++;
+
+            if (contador < listaPerguntas.length) {
+                resultado.innerHTML = listaPerguntas[contador] + '<br><br>';
+                resultado.innerHTML += 'Mito: <input type="radio" name="resposta" value="M"> Verdade: <input type="radio" name="resposta" value="V"><br><br>';
+                resultado.innerHTML += '<button onclick="verificar()">Verificar</button>';
+            } else {
+                resultado.innerHTML = 'Quiz finalizado! <br>';
+                resultado.innerHTML += 'Acertos: ' + score + '<br>';
+                resultado.innerHTML += 'Erros: ' + erro + '<br>';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

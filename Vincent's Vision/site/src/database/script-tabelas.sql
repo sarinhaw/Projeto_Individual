@@ -6,17 +6,6 @@
 comandos para mysql - banco local - ambiente de desenvolvimento
 */
 
-CREATE DATABASE VS;
-
-USE VS;
-
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
-);
-
 -- CREATE TABLE aviso (
 -- 	id INT PRIMARY KEY AUTO_INCREMENT,
 -- 	titulo VARCHAR(100),

@@ -83,7 +83,8 @@ label {
 }
 
 .social {
-  background-color: #ffff;;
+  background-color: #ffff;
+  ;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -91,7 +92,8 @@ label {
 }
 
 .card_banner {
-  background-color: #ffff;;
+  background-color: #ffff;
+  ;
   width: 100%;
   height: 90vh;
   display: flex;
@@ -196,7 +198,7 @@ label {
   text-align: center;
 }
 
-.frase .botao_home{
+.frase .botao_home {
   margin-top: 20px;
   background-color: #5C9698;
   width: 90%;
@@ -206,9 +208,9 @@ label {
   text-align: center;
 }
 
-.botao_home:hover{
+.botao_home:hover {
   background-color: #ffffff;
- 
+
 }
 
 .social2 {
@@ -289,24 +291,53 @@ label {
   /* border-radius:  25% 10%; */
 }
 
-.row{
+.row {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.footer{
-	background-color: #71989b;
-    padding: 70px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 5;
-}
-.footer-col{
-   width: 20%;
-   padding: 0 15px;
-   display: inline;
+.footer {
+  background-color: #71989b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35vh;
 }
 
+.footer .caixa{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 10vh; */
+}
+
+.footer .caixa h4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 5vh;
+  margin-top: 3%;
+}
+
+.caixa .g{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  height: 10vh;
+  margin-top: 1%;
+}
+
+.g img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: auto;
+}
