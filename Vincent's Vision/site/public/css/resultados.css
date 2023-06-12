@@ -1,0 +1,155 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e5ecee;
+}
+
+ul {
+    list-style: none;
+}
+
+.i_nav {
+    width: 50%;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+nav {
+    background-color: rgba(16, 16, 16, .5);
+    width: 350px;
+    height: 100%;
+    left: -350px;
+    position: absolute;
+    transition: all .5s;
+}
+
+input[type="checkbox"]:checked~nav {
+    transform: translateX(350px);
+}
+
+ul {
+    top: 70px;
+    position: absolute;
+    /* ocupa 100 do pai que é o elemento que esta relative */
+    width: 100%;
+}
+
+a {
+    display: block;
+    /* ocupa 100 do pai que a nav */
+    padding: 30px 5px;
+    color: wheat;
+}
+
+a:hover {
+    background-color: #D7CB75;
+    color: rgb(0, 0, 0);
+}
+
+label {
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+}
+
+
+
+.esquerdo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    height: 90vh;
+}
+
+.hello{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 80vh;
+    background-color: #D7CB75;
+    margin-top: 20%;
+    margin-left: 10%;
+    border-radius: 20px;
+}
+
+.hello h3{
+    align-items: center;
+    font-size: 20px;
+}
+
+.dash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caixa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50vh;
+    background-color: #D7CB75;
+}
+
+.tudo{
+    display: flex;
+    width: 100%;
+    align-self: center;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-tudo{
+    width: 95%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 8%;
+}
+
+.content-left{
+    height: inherit;
+    width: 25%;
+    background-color: #D7CB75;
+    border-radius: 20px;
+}
+
+.content-right{
+    width: 69%;
+    height: inherit;
+    background-color: #D7CB75;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graph{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+#myChartCanvas1{
+    width: 80%;
+    height: 80vh;
+}

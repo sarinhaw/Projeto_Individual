@@ -1,75 +1,203 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/quiz.css">
+    <title>Quizz</title>
+    <link rel="icon" href="../css/img/favicon.png">
 </head>
 
 <body>
-    <div id="resultado"></div>
+    <input type="checkbox" id="chec">
+    <label for="chec">
+        <img class="i_nav" src="../css/img/imagem_2023-06-06_205526772-removebg-preview.png" alt="">
+    </label>
+    <nav>
+        <ul>
+            <li> <a href="homeOf.html">Home</a></li>
+            <li> <a href="quiz.html">Quizz</a></li>
+            <!-- <li> <a href="#">Ainda não o conhece?</a></li> -->
+            <!-- <li> <a href="galeria.html">Galeria Virtual</a></li> -->
+            <!-- <li> <a href="contato.html">Entre em Contado</a></li> -->
+        </ul>
+    </nav>
 
-    <script>
-        var listaPerguntas = [
-            'Van Gogh cortou sua própria orelha como um ato de loucura',
-            'Van Gogh vendeu apenas um quadro em vida',
-            'Van Gogh era considerado um bom pintor por seus contemporâneos',
-            'O famoso quadro "A noite estrelada" foi pintado durante o melhor período da vida de Van Gogh',
-            'Van Gogh não possuía um bom relacionamento com seu irmão devido a questões financeiras',
-            'Van Gogh era influenciado pela arte japonesa',
-            'Van Gogh nasceu e cresceu na França e produziu muitos trabalhos em Arles',
-            'Van Gogh sempre esteve rodeado de amigos artistas que o ajudavam com suas obras',
-            'Van Gogh cometeu suicídio',
-            'Van Gogh enviou sua orelha cortada para uma mulher que ele amava.',
-            'Antes de se tornar um artista, Van Gogh trabalhou em várias profissões diferentes.',
-            'Van Gogh costumava pintar muitas pessoas da nobreza francesa.',
-            'Van Gogh tentou pintar apenas por alguns anos de sua vida depois desistiu por não obter sucesso.'
-        ];
+    <body>
 
-        var listaRespostas = ['V', 'V', 'M', 'M', 'M', 'V', 'M', 'M', 'V', 'V', 'V', 'M', 'M'];
+        <div class="inicio">
+            <div class="inicio_q">
+                <p> <span> </span> Mitos <span> ou </span> Verdades?<span></span></p>
+            </div>
+            <div class="começo">
 
-        var contador = 0;
-        var score = 0;
-        var erro = 0;
-        // var resultado = document.getElementById("resultado");
-        resultado.innerHTML = resultado;
+            </div>
+        </div>
 
-        resultado.innerHTML = listaPerguntas[contador] + '<br><br>';
-        resultado.innerHTML += 'Mito: <input type="radio" name="resposta" value="M"> Verdade: <input type="radio" name="resposta" value="V"><br><br>';
-        resultado.innerHTML += '<button onclick="verificar()">Verificar</button>';
+        <div class="baner_q">
+            <div class="intro_q">
+                <p>Será que você conhece o bastante sobre a história do Van Gogh?<br> Teste agora o seu conhecimento
+                    neste Quiz e descubra se você consegue separar os mitos das verdades sobre a vida e obra desse
+                    renomado artista!
 
-        function verificar() {
-            var respostas = document.getElementsByName("resposta");
-            // var respostaSelecionada = null;
+                    <br>A cada pergunta, você terá a chance de mostrar seu conhecimento e desvendar os segredos que
+                    envolvem a vida de Van Gogh. Será que você consegue identificar quais histórias são fatos reais e
+                    quais são meras lendas? Desafie-se e prove que você é capaz de distinguir entre as verdades
+                    históricas e os mitos que permeiam a vida desse artista singular.
 
-            for (var i = 0; i < respostas.length; i++) {
-                if (respostas[i].checked) {
-                    respostaSelecionada = respostas[i].value;
+                    No final do quiz, você poderá conferir seus pontos e descobrir até onde vai seu conhecimento sobre
+                    Van Gogh. <br> Será que você alcançará a pontuação máxima e se tornará um verdadeiro especialista no
+                    assunto?
+
+                    Desafie-se agora mesmo e embarque nessa incrível experiência de aprendizado e diversão, separando os
+                    mitos e verdades da história de Van Gogh!
+                </p>
+            </div>
+        </div>
+
+    </body>
+
+</html>
+
+<div class="card_q">
+    <div class="guardar_q">
+        <div id="resultado"></div>
+
+        <script>
+            var listaPerguntas = [
+                'Van Gogh cortou sua própria orelha como um ato de loucura',
+                'Van Gogh vendeu apenas um quadro em vida',
+                'Van Gogh era considerado um bom pintor por seus contemporâneos',
+                'O famoso quadro "A noite estrelada" foi pintado durante o melhor período da vida de Van Gogh',
+                'Van Gogh não possuía um bom relacionamento com seu irmão devido a questões financeiras',
+                'Van Gogh era influenciado pela arte japonesa',
+                'Van Gogh nasceu e cresceu na França e produziu muitos trabalhos em Arles',
+                'Van Gogh sempre esteve rodeado de amigos artistas que o ajudavam com suas obras',
+                'Van Gogh cometeu suicídio',
+                'Van Gogh enviou sua orelha cortada para uma mulher que ele amava.',
+                'Antes de se tornar um artista, Van Gogh trabalhou em várias profissões diferentes.',
+                'Van Gogh costumava pintar muitas pessoas da nobreza francesa.',
+                'Van Gogh tentou pintar apenas por alguns anos de sua vida depois desistiu por não obter sucesso.'
+            ];
+
+            var listaRespostas = ['V', 'V', 'M', 'M', 'M', 'V', 'M', 'M', 'V', 'V', 'V', 'M', 'M'];
+
+            var contador = 0;
+            var score = 0;
+            var erro = 0;
+
+            resultado.innerHTML = listaPerguntas[contador] + '<br><br>';
+            resultado.innerHTML += 'Mito: <input type="radio" name="resposta" value="M"> Verdade: <input type="radio" name="resposta" value="V"><br><br>';
+            resultado.innerHTML += '<button onclick="verificar()">Verificar</button>';
+
+            function verificar() {
+                var respostas = document.getElementsByName("resposta");
+
+                for (var i = 0; i < respostas.length; i++) {
+                    if (respostas[i].checked) {
+                        respostaSelecionada = respostas[i].value;
+                    }
+                }
+
+                if (respostaSelecionada === listaRespostas[contador]) {
+                    score++;
+                } else {
+                    erro++;
+                }
+
+                contador++;
+
+                if (contador < listaPerguntas.length) {
+                    resultado.innerHTML = listaPerguntas[contador] + '<br><br>';
+                    resultado.innerHTML += 'Mito: <input type="radio" name="resposta" value="M"> Verdade: <input type="radio" name="resposta" value="V"><br><br>';
+                    resultado.innerHTML += '<button onclick="verificar()">Verificar</button>';
+                } else {
+                    resultado.innerHTML = 'Quiz finalizado! <br>';
+                    resultado.innerHTML += 'Acertos: ' + score + '<br>';
+                    resultado.innerHTML += 'Erros: ' + erro + '<br>';
+                    cadastrar_quiz()
                 }
             }
 
-            if (respostaSelecionada === listaRespostas[contador]) {
-                score++;
-            } else {
-                erro++;
+            function cadastrar_quiz() {
+                // aguardar();
+                //Recupere o valor da nova input pelo nome do id
+                // Agora vá para o método fetch logo abaixo
+                var idUsuarioVar = sessionStorage.ID_USUARIO; 
+                var acertosVar = Number(score);
+                var errosVar = Number(erro);
+
+                console.log(score);
+                console.log(erro);
+
+                if (idUsuarioVar == "" || acertosVar == "" || errosVar == "") {
+                    // cardErro.style.display = "block"
+                    // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+                    // finalizarAguardar();
+                    return false;
+                }
+                else {
+                    setInterval(5000)
+                }
+
+                // Enviando o valor da nova input
+                fetch("/usuarios/cadastrar_quiz", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        // crie um atributo que recebe o valor recuperado aqui
+                        // Agora vá para o arquivo routes/usuario.js
+                        
+                        idUsuarioServer: idUsuarioVar,
+                        acertosServer: acertosVar,
+                        errosServer: errosVar
+                    })
+                }).then(function (resposta) {
+
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+                        // cardErro.style.display = "block";
+
+                        // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+
+
+                        setTimeout(() => {
+                            window.location = "resultados.html";
+                        }, "1000")
+
+                        // limparFormulario();
+                        // finalizarAguardar();
+                    } else {
+                        throw ("Houve um erro ao tentar realizar o cadastro!");
+                    }
+                }).catch(function (resposta) {
+                    console.log(`#ERRO: ${ resposta }`);
+                    // finalizarAguardar();
+                });
+
+                return false;
             }
+        </script>
+    </div>
+</div>
 
-            contador++;
+<div class="baixo_q">
+    <div class="meio_q">
 
-            if (contador < listaPerguntas.length) {
-                resultado.innerHTML = listaPerguntas[contador] + '<br><br>';
-                resultado.innerHTML += 'Mito: <input type="radio" name="resposta" value="M"> Verdade: <input type="radio" name="resposta" value="V"><br><br>';
-                resultado.innerHTML += '<button onclick="verificar()">Verificar</button>';
-            } else {
-                resultado.innerHTML = 'Quiz finalizado! <br>';
-                resultado.innerHTML += 'Acertos: ' + score + '<br>';
-                resultado.innerHTML += 'Erros: ' + erro + '<br>';
-            }
-        }
-    </script>
+    </div>
+</div>
 
-</body>
-
-</html>
+<footer class="footer">
+    <div class="caixa">
+        <h4>Desenvolvido por Sarah Oliveira &copy; 2023</h4>
+        <h4>Entre em contato</h4>
+        <div class="g">
+            <img src="../css/img/ficon.png" alt="">
+            <img src="../css/img/ficon2.png" alt="">
+        </div>
+    </div>
+</footer>
