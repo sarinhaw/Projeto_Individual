@@ -1,12 +1,198 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/quadro.css">
+    <title>Quiz de Personalidade</title>
+    <link rel="icon" href="../css/img/favicon.png">
 </head>
+
 <body>
-    
-</body>
+    <input type="checkbox" id="chec">
+    <label for="chec">
+        <img class="i_nav" src="../css/img/imagem_2023-06-06_205526772-removebg-preview.png" alt="">
+    </label>
+    <nav>
+        <ul>
+            <li> <a href="homeOf.html">Home</a></li>
+            <li> <a href="galeria.html">Galeria Virtual</a></li>
+            <li> <a href="quiz.html">Quiz</a></li>
+            <!-- <li> <a href="#">Ainda não o conhece?</a></li> -->
+            <li> <a href="resultados.html">Seus Resultados</a></li>
+        </ul>
+    </nav>
+
+    <body>
+
+        <div class="banner_quiz">
+            <div class="intro_quiz">
+                <p> Descubra qual pintura do <span> Van Gogh</span></span> mais combina<span> com você<span></span>.</p>
+            </div>
+            <div class="gif">
+
+            </div>
+        </div>
+
+        <div class="principal">
+            <div class="perguntas" id="perguntas">
+                1. Qual palavra melhor descreve você? <select id="id_escolha1">
+                    <option value="">escolha</option>
+                    <option value="aventureiro">Aventureiro</option>
+                    <option value="romantico">Amoroso</option>
+                    <option value="observador">Observador</option>
+                    <option value="sonhador">Sonhador</option>
+                </select><br><br>
+
+                2. Como você se sente em meio à natureza? <select id="id_escolha2">
+                    <option value="">escolha</option>
+                    <option value="energizado">Energizado</option>
+                    <option value="inspirado">Inspirado</option>
+                    <option value="calmo">Calmo</option>
+                    <option value="desgosta">Não gosto de mato</option>
+                </select><br><br>
+
+                3. Qual cenário você prefere? <select id="id_escolha3">
+                    <option value="">escolha</option>
+                    <option value="praia">Praias Ensolaradas</option>
+                    <option value="campos">Campos Floridos</option>
+                    <option value="urbano">Paisagem Urbana</option>
+                    <option value="estrelas">Céus Estrelados</option>
+                </select><br><br>
+
+                4. Qual atividade você acha mais relaxante? <select id="id_escolha4">
+                    <option value="">escolha</option>
+                    <option value="explorar">Explorar novos lugares</option>
+                    <option value="ler">Ler um bom livro</option>
+                    <option value="admirar">Admirar as pessoas ao meu redor</option>
+                    <option value="imaginar">Imaginar Histórias</option>
+                </select><br><br>
+            
+                <button onclick="combinar()">
+                    Resultado
+                </button>
+
+            </div>
+
+            <!-- <div class="mensagem" id="mensagem" style="display: flex;">
+                <div class="result" id="noite_estrelada">
+                    <img class="quadros" id="img_resultado">
+                    <p id="fraseResultado"> </p>
+                </div>
+            </div> -->
+
+            <div id="resultado" class="resultado" style="display: none;">
+                <div class="noiteEstrelada" id="noiteEstrelada" style="display: none;">
+                    <img src="../css/img/Nome (1).png" alt="noite_estrelada" class="img_resultado">
+                    <p class="fraseResultado">
+                        A pintura que te representa é <span> A Noite Estrelada !</span> <br> Você possui uma personalidade corajosa e ousada, assim como as pinceladas fortes e inconfundíveis deste famoso quadro.
+                    </p>
+                </div>
+                <div class="noiteEstrelada" id="terraco_cafe" style="display: none;">
+                    <img src="../css/img/terraco_cafe.png" alt="noite_estrelada" class="img_resultado">
+                    <p class="fraseResultado">
+                        A pintura que te representa é <span>O Terraço no Café à Noite !</span> <br> Você possui uma personalidade acolhedora, harmoniosa e tranquila, assim como os sentimentos transmitidos por este belo quadro.
+                    </p>
+                </div>
+                <div class="noiteEstrelada" id="amendoeira" style="display: none;">
+                    <img src="../css/img/japones.png.jpg" alt="noite_estrelada" class="img_resultado">
+                    <p class="fraseResultado">
+                        A pintura que te representa é <span>Amendoeira em Flor !</span> <br> Você aparenta ser calmo e equilibrado, prefere ficar mais na sua e em paz, e este quadro lhe cai bem por transmitir o mesmo sentimento de serenidade.
+                    </p>
+                </div>
+                <div class="noiteEstrelada" id="quarto" style="display: none;">
+                    <img src="../css/img/quarto_amarelo.png.jpg" alt="noite_estrelada" class="img_resultado">
+                    <p class="fraseResultado">
+                        A pintura que te representa é <span>O Quarto de Van Gogh em Arles !</span> <br> Você possui uma personalidade criativa e sonhadora, e este quadro te representa por ilustrar o ambiente em que Van Gogh produziu, imaginou e criou algumas de suas obras, além de ser o seu lugar de descanso.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+
+        <footer class="footer">
+            <div class="caixa">
+                <h4>Desenvolvido por Sarah Oliveira &copy; 2023</h4>
+                <h4>Entre em contato</h4>
+                <div class="g">
+                    <img src="../css/img/ficon.png" alt="">
+                    <img src="../css/img/ficon2.png" alt="">
+                </div>
+            </div>
+        </footer>
+
+    </body>
+
 </html>
+<script>
+
+    var aventureiro = 0;
+    var romantico = 0;
+    var observador = 0;
+    var sonhador = 0;
+
+    function combinar() {
+
+        perguntas.style.display = 'none'
+        resultado.style.display = 'flex'
+
+        var escolha1 = id_escolha1.value;
+        var escolha2 = id_escolha2.value;
+        var escolha3 = id_escolha3.value;
+        var escolha4 = id_escolha4.value;
+
+        if (escolha1 == "aventureiro") {
+            aventureiro++
+        } else if (escolha1 == "romantico") {
+            romantico++
+        } else if (escolha1 == "observador") {
+            observador++
+        } else if (escolha1 == "sonhador") {
+            sonhador++
+        }
+
+        if (escolha2 == "energizado") {
+            aventureiro++
+        } else if (escolha2 == "inspirado") {
+            romantico++
+        } else if (escolha2 == "calmo") {
+            observador++
+        } else if (escolha2 == "desgosta") {
+            sonhador++
+        }
+
+        if (escolha3 == "praia") {
+            aventureiro++
+        } else if (escolha3 == "campos") {
+            romantico++
+        } else if (escolha3 == "urbano") {
+            observador++
+        } else if (escolha3 == "estrelas") {
+            sonhador++
+        }
+
+        if (escolha4 == "explorar") {
+            aventureiro++
+        } else if (escolha4 == "ler") {
+            romantico++
+        } else if (escolha4 == "admirar") {
+            observador++
+        } else if (escolha4 == "imaginar") {
+            sonhador++
+        }
+
+        if (aventureiro > romantico && aventureiro > observador && aventureiro > sonhador) {
+            noiteEstrelada.style.display = 'flex'
+            sessionStorage.setItem("LINK_IMAGEM", "../css/img/Nome (1).png")
+        } else if (romantico > aventureiro && romantico > observador && romantico > sonhador) {
+            terraco_cafe.style.display = 'flex'
+            sessionStorage.setItem("LINK_IMAGEM", "../css/img/terraco_cafe.png")
+        } else if (observador > aventureiro && observador > romantico && observador > sonhador) {
+            amendoeira.style.display = 'flex'
+            sessionStorage.setItem("LINK_IMAGEM", "../css/img/japones.png.jpg")
+        } else if (sonhador > aventureiro && sonhador > romantico && sonhador > observador) {
+            quarto.style.display = 'flex'
+            sessionStorage.setItem("LINK_IMAGEM", "../css/img/quarto_amarelo.png.jpg")
+        }
+    }
+
+</script>

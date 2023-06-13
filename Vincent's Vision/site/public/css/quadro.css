@@ -63,149 +63,173 @@ label {
     z-index: 1;
 }
 
-
-
-.esquerdo {
+.banner_quiz {
+    height: 100vh;
+    background-color: #e5ecee;
+    background-size: cover;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro_quiz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro_quiz p {
+    font-size: 36px;
+    color: #2B566B;
+    width: 280px;
+}
+
+.intro_quiz span {
+    font-weight: 800;
+    color: #2B566B;
+}
+
+.gif {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 60%;
+    background-image: url(../css/img/loving-vincent-818.gif);
+    background-size: cover;
+    box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+}
+
+
+.principal {
+    display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    flex-direction: row;
-    height: 90vh;
+    height: 100vh;
 }
 
-.hello {
+.perguntas {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    height: 80vh;
-    background-color: #D7CB75;
-    margin-top: 20%;
-    margin-left: 10%;
-    border-radius: 20px;
+    width: 80%;
+    height: 90vh;
+    flex-direction: column;
+    font-size: 150%;
 }
 
-.hello h3 {
+.perguntas select {
+    background-color: #f2f2f2;
+    color: #2B566B;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 40vw;
+    height: 8vh;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 1%;
+}
+
+.perguntas button {
+    width: 10%;
+    height: 10%;
+    font-size: 70%;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #D7CB75;
+}
+
+.perguntas button:hover{
+    box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+}
+
+.mensagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.mensagem .result {
+    justify-content: center;
     align-items: center;
     font-size: 20px;
+    border-color: #2B566B;
 }
 
-.dash {
+.result .quadros {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
-.caixa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
+
+
+.img_resultado {
+    width: auto;
     height: 50vh;
-    background-color: #D7CB75;
 }
 
-.tudo {
+#fraseResultado {
     display: flex;
     width: 100%;
     align-self: center;
-    height: 100vh;
-    justify-content: center;
     align-items: center;
-}
-
-.tudo .user {
-    display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.tudo .user h3 {
-    font-size: 100%;
-    color: #ffff;
     text-align: center;
-    margin-top: 20%;
 }
 
-.content-tudo {
-    width: 95%;
-    height: 90vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 8%;
-}
-
-.content-left {
-    height: inherit;
-    width: 25%;
-    background-color: #5C9698;
-    border-radius: 20px;
-}
-
-#quadroIcon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 110%;
-    height: 29vh;
-    border-radius: 50%;
-}
-
-#b_usuario{
-    margin-left: 5px;
-}
-
-.content-left h3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20%;
-}
-
-.quadro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    height: 29vh;
-    border-radius: 50%;
-    background-color: #fdfaa9;
-    margin-left: 19%;
-    margin-top: 10%;
-}
-
-#b_usuario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.content-right {
-    width: 69%;
-    height: inherit;
-    background-color: #5C9698;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
+.result {
+    width: 100%;
+    height: 70vh;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.graph {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-}
-
-#myChartCanvas1 {
-    width: 80%;
+.resultado {
+    width: 100%;
     height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    background-color: #2B566B;
+    color: white;
 }
 
-/* .footer {
+.noiteEstrelada {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    height: 70vh;
+}
+
+.fraseResultado {
+    width: 70%;
+    text-align: center;
+}
+
+.fraseResultado span {
+    font-weight: 800;
+  color: #D7CB75;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+
+}
+
+.footer {
     background-color: #2B566B;
     display: flex;
     justify-content: center;
@@ -220,6 +244,7 @@ label {
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+    /* height: 10vh; */
 }
 
 .footer .caixa h4 {
@@ -247,4 +272,4 @@ label {
     align-items: center;
     width: 30%;
     height: auto;
-} */
+}

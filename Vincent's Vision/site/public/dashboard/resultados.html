@@ -18,10 +18,10 @@
     </label>
     <nav>
         <ul>
-            <li> <a href="#">Home</a></li>
-            <li> <a href="quiz.html">Quizz</a></li>
+            <li> <a href="homeOf.html">Home</a></li>
+            <li> <a href="galeria.html">Galeria Virtual</a></li>
+            <li> <a href="quiz.html">Quiz</a></li>
             <!-- <li> <a href="#">Ainda não o conhece?</a></li> -->
-            <!-- <li> <a href="galeria.html">Galeria Virtual</a></li> -->
             <!-- <li> <a href="contato.html">Entre em Contado</a></li> -->
         </ul>
     </nav>
@@ -29,8 +29,19 @@
     <div class="tudo">
         <div class="content-tudo">
             <div class="content-left">
-                <h3>Olá, <span id="b_usuario"></span>!</h3>
+                <div class="quadro" id="quadroPerfil">
+                    <img id="quadroIcon" src="">
+                </div>
+                <h3>Bem Vindo(a) <span id="b_usuario"></span>!</h3>
+                <div class="user">
+                    <h3>Consulte seu desempenho de conhecimento com o nosso recurso visual</h3>
+                    <div class="guardar_botao">
+                    <!-- <a href="homeOf.html" class="sai">Sair</a> -->
+                    </div>
+
+                </div>
             </div>
+        
             <div class="content-right">
                 <div id="grafico1" class="display-block">
                     <h3 class="tituloGraficos">
@@ -44,6 +55,17 @@
         </div>
     </div>
 
+    <!-- <footer class="footer">
+        <div class="caixa">
+            <h4>Desenvolvido por Sarah Oliveira &copy; 2023</h4>
+            <h4>Entre em contato</h4>
+            <div class="g">
+                <img src="../css/img/ficon.png" alt="">
+                <img src="../css/img/ficon2.png" alt="">
+            </div>
+        </div>
+    </footer> -->
+
 </body>
 
 </html>
@@ -51,6 +73,7 @@
 <script>
 
     //    m_usuario.innerHTML = sessionStorage.EMAIL_USUARIO;
+    quadroIcon.src = sessionStorage.LINK_IMAGEM;
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     var idUsuario = Number(sessionStorage.ID_USUARIO)
@@ -158,12 +181,11 @@
                 data: [],
                 fill: true,
                 borderColor: [
-                    'red',
-                    '#0583D2'
+                    'transparent',
                 ],
                 backgroundColor: [
-                    'red',
-                    '#0583D2'
+                    '#3F6267',
+                    '#F6CA59',
                 ],
                 tension: 0.1
             },
@@ -171,10 +193,8 @@
                 label: 'Quantidade de questões',
                 data: [],
                 fill: true,
-                borderColor: 'blue',
+                borderColor: 'transparent',
                 backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)'
                 ],
                 tension: 0.1
             }
