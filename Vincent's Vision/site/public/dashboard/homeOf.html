@@ -8,68 +8,103 @@
 </head>
 
 <body>
-    <input type="checkbox" id="chec">
-    <label for="chec">
-        <img class="i_nav" src="../css/img/imagem_2023-06-06_205526772-removebg-preview.png" alt="">
-    </label>
-    <nav>
-        <ul>
-            <li> <a href="homeOf.html">Home</a></li>
-            <li> <a href="galeria.html">Galeria Virtual</a></li>
-            <li> <a href="quiz.html">Quiz</a></li>
-            <!-- <li> <a href="#">Ainda não o conhece?</a></li> -->
-            <li> <a href="resultados.html">Seus Resultados</a></li>
-        </ul>
-    </nav>
-
-    <div class="banner">
-        <div class="card_home">
-            <p> <span> Vincent</span> Van Gogh<span> por </span>Sarah Oliveira <span></span>.</p>
-        </div>
-        <div class="outro">
-
-        </div>
-    </div>
-
-    <div class="social">
-        <div class="card_banner">
-            <div class="foto">
-            </div>
-            <div class="texto">
-                <div class="text-content">
-                    <p> <span> Seja Bem Vindo(a) Artista Amador!<span></span></p>
-                    <br>
-                    <p>Este site é um tesouro de informações fascinantes sobre a vida e a jornada artística de Van
-                        Gogh. Descubra as curiosidades por trás de suas obras e interaja com nossos quizzes. Estamos
-                        animados por ter você aqui e esperamos que você aproveite ao máximo sua jornada pelo mundo
-                        de Van Gogh.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="cotacao">
-        <div class="lado">
-            <img src="../css/img/lado-removebg-preview.png" alt="">
-        </div>
-        <div class="mensagem">
-            <img src="../css/img/Nome (37).png" alt="">
-        </div>
-    </div>
 
 
-
-    <footer class="footer">
-        <div class="caixa">
-            <h4>Desenvolvido por Sarah Oliveira &copy; 2023</h4>
-            <h4>Entre em contato</h4>
-            <div class="g">
-                <img src="../css/img/ficon.png" alt="">
-                <img src="../css/img/ficon2.png" alt="">
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <div class="group">
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Galeria Virtual</a></li>
+                <li><a href="#">Quiz</a></li>
+                <li><a href="#">Seus Resultados</a></li>
+            </ul>
+            <div class="search">
+                <span class="icon">
+                <ion-icon name="search-outline" class="searchBtn"></ion-icon>
+                <ion-icon name="close-outline" class="closeBtn"></ion-icon>
+                </span>
             </div>
         </div>
-    </footer>
+        <div class="searchBox">
+            <input type="text" placeholder="Busque Aqui. . .">
+        </div>
+    </header>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let searchBtn = document.querySelector('.searchBtn');
+        let closeBtn = document.querySelector('.closeBtn');
+        let searchBox = document.querySelector('.searchBox');
+        let navigation = document.querySelector('.navigation');
+        let header = document.querySelector('.header');
+
+        searchBtn.onclick = function(){
+            searchBox.classList.add('active');
+            closeBtn.classList.add('active');
+            searchBtn.classList.add('active');
+        }
+
+        closeBtn.onclick = function(){
+            searchBox.classList.remove('active');
+            closeBtn.classList.remove('active');
+            searchBtn.classList.remove('active');
+        }
+
+    </script>
+
+
+
+     <!-- <div class="banner">
+    //     <div class="card_home">
+    //         <p> <span> Vincent</span> Van Gogh<span> por </span>Sarah Oliveira <span></span>.</p>
+    //     </div>
+    //     <div class="outro">
+
+    //     </div>
+    // </div> -->
+
+    <!-- <div class="social">
+    //     <div class="card_banner">
+    //         <div class="foto">
+    //         </div>
+    //         <div class="texto">
+    //             <div class="text-content">
+    //                 <p> <span> Seja Bem Vindo(a) Artista Amador!<span></span></p>
+    //                 <br>
+    //                 <p>Este site é um tesouro de informações fascinantes sobre a vida e a jornada artística de Van
+    //                     Gogh. Descubra as curiosidades por trás de suas obras e interaja com nossos quizzes. Estamos
+    //                     animados por ter você aqui e esperamos que você aproveite ao máximo sua jornada pelo mundo
+    //                     de Van Gogh.</p>
+    //             </div>
+    //         </div>
+
+    //     </div>
+    // </div> -->
+
+    // <!-- <div class="cotacao">
+    //     <div class="lado">
+    //         <img src="../css/img/lado-removebg-preview.png" alt="">
+    //     </div>
+    //     <div class="mensagem">
+    //         <img src="../css/img/Nome (37).png" alt="">
+    //     </div>
+    // </div> -->
+
+
+
+    // <!-- <footer class="footer">
+    //     <div class="caixa">
+    //         <h4>Desenvolvido por Sarah Oliveira &copy; 2023</h4>
+    //         <h4>Entre em contato</h4>
+    //         <div class="g">
+    //             <img src="../css/img/ficon.png" alt="">
+    //             <img src="../css/img/ficon2.png" alt="">
+    //         </div>
+    //     </div>
+    // </footer> -->
 </body>
 
 </html>

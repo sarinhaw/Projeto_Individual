@@ -1,316 +1,144 @@
-* {
-  padding: 0;
-  margin: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
 
-a {
-  text-decoration: none;
-  color: black;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #e5ecee;
+  background: #FFFEF7;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-ul {
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12vh;
+  background: #E7EBE8;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0);
+}
+
+.logo{
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.group{
+  display: flex;
+  align-items: center;
+}
+
+header ul{
+  position: relative;
+  display: flex;
+  gap: 30px;
+}
+
+header ul li{
   list-style: none;
 }
 
-.i_nav {
-  width: 50%;
-}
-
-input[type="checkbox"] {
-  display: none;
-}
-
-nav {
-  background-color: rgba(16, 16, 16, .5);
-  width: 350px;
-  height: 100%;
-  left: -350px;
-  position: absolute;
-  transition: all .5s;
-}
-
-input[type="checkbox"]:checked~nav {
-  transform: translateX(350px);
-}
-
-ul {
-  top: 70px;
-  position: absolute;
-  /* ocupa 100 do pai que é o elemento que esta relative */
-  width: 100%;
-}
-
-a {
-  display: block;
-  /* ocupa 100 do pai que a nav */
-  padding: 30px 5px;
-  color: wheat;
-}
-
-a:hover {
-  background-color: #D7CB75;
-  color: rgb(0, 0, 0);
-}
-
-label {
-  padding: 15px;
-  position: absolute;
-  z-index: 1;
-}
-
-
-.banner {
-  height: 100vh;
-  background-color: #e5ecee;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card_home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card_home p {
-  font-size: 36px;
-  color: #2B566B;
-  width: 280px;
-}
-
-.card_home span {
-  font-weight: 800;
-  color: #2B566B;
-}
-
-.outro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  width: 60%;
-  background-image: url(../css/img/banner10.png);
-  background-size: cover;
-  box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
-}
-
-.social {
-  background-color: #e5ecee;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card_banner {
-  background-color: #e5ecee;
-  width: 100%;
-  height: 90vh;
-  display: flex;
-  flex-direction: row;
-  /* border-radius: 25% 10%; */
-  border: none;
-}
-
-.texto {
-  color: rgb(0, 0, 0);
-  text-align: center;
-  width: 50%;
-  height: inherit;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.card_guardar {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
+header ul li a{
   position: relative;
-  width: 112%;
-  height: 70vh;
-  /* background-color: #ffffff; */
-  margin-right: 15%;
+  text-decoration: none;
+  font-size: 1em;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+header ul li a::before{
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #A88F18;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: right;
+}
+
+header ul li a:hover::before{
+  transform: scaleX(1);
+  transform-origin: left;
+
+}
+
+header .search{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
   z-index: 10;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  /* border-radius: 25% 10%; */
+  cursor: pointer;
 
 }
 
-.texto h1 {
-  color: black;
-  display: flex;
-  align-items: end;
-}
-
-.text-content {
-  height: 70vh;
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  margin-bottom: 10%;
-  margin-right: 20%;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-.foto {
-  display: flex;
-  background-image: url(../css/img/amarelo.png);
-  margin-left: 5%;
-  width: 50%;
-  height: 80vh;
-  background-size: cover;
-  /* border-radius:  25% 10%; */
-}
-
-.lado {
-  margin-bottom: 50px;
-  background-color: #e5ecee;
-  height: 80vh;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  margin-right: 5%;
-}
-
-
-.cotacao {
-  margin-bottom: 50px;
-  background-color: #e5ecee;
-  height: 80vh;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-}
-
-.text-content {
-  background-color: #2B566B;
-  text-align: right;
+.searchBox{
+  position: absolute;
+  right: -100%;
   width: 100%;
+  height: 100%;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  padding: 0 30px;
+  transition: 0.5s ease-in-out;
 }
 
-.text-content span{
-  color: #ffffff;
-  font-size: 100%;
-  margin-left: 10px;
+.searchBox.active{
+  right: 0;
 }
 
-.text-content p{
-  color: #ffffff;
-  margin-right: 10px;
-}
-
-.mensagem img {
-  width: 102%;
-  height: 80vh;
-}
-
-.card_embaixo {
-  background-image: url(img/baNNerhome.pgn.webp);
-  height: 90vh;
+.searchBox input{
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  outline: none;
+  height: 50px;
+  color: #333;
+  font-size: 1.25em;
+  background: #fff;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.5);
 }
 
-.nao_conhece {
-  background-color: #e5ecee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  width: 70%;
-  border-radius: 10%
+.searchBtn{
+  position: relative;
+  left: 30px;
+  top: 2.5px;
+  transition: 0.5s ease-in-out;
 }
 
-.nao_conhece:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+.searchBtn.active{
+  left: 0;
 }
 
-.nao_conhece .frase h1 {
-  text-align: center;
+.closeBtn{
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  scale: 0;
 }
 
-.nao_conhece .frase p {
-  text-align: center;
-}
-
-.frase .botao_home {
-  margin-top: 20px;
-  background-color: #5C9698;
-  width: 90%;
-  height: 2vh;
-  border-radius: 10px;
-  justify-content: center;
-  text-align: center;
-}
-
-.botao_home:hover {
-  background-color: #ffffff;
-
+.closeBtn.active{
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
+  scale: 1;
 }
 
 
-.row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row-reverse;
-
-}
-
-.footer {
-  background-color: #2B566B;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 35vh;
-}
-
-.footer .caixa {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  /* height: 10vh; */
-}
-
-.footer .caixa h4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 5vh;
-  margin-top: 3%;
-}
-
-.caixa .g {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 30%;
-  height: 10vh;
-  margin-top: 1%;
-}
-
-.g img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-  height: auto;
-}
